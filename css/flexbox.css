@@ -55,14 +55,17 @@
 
 .videos__item {
   height: 303px;
-  width: 280px;
-  flex-grow: 1;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .videos__container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 10px;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 150px;
 }
 
 /* DESAFIO DESCRIPCIÓN DE LOS VIDEOS */
@@ -119,12 +122,20 @@
   .rodapie__container {
     justify-content: space-between;
   }
+
+  .videos__container {
+    margin-left: 74px; /* o padding-left */
+  }
 }
 
 @media (min-width: 1440px) {
   .menu__container {
     width: 239px;
     overflow: scroll;
+  }
+
+  .videos__container {
+    margin-left: 239px; /* o padding-left */
   }
 
   .menu__lista:nth-child(2),
